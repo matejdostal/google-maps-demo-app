@@ -1,6 +1,6 @@
 Reusable \<GoogleMap /\> component for React apps...
 
-```
+```js
 
 import GoogleMap, { initializeApi } from "./GoogleMap";
 
