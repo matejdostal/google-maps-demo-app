@@ -1,1 +1,1 @@
-Reusable Google Maps \<GoogleMap /\> component for React apps
+Reusable \<GoogleMap /\> component for React apps
