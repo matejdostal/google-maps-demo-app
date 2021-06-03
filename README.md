@@ -20,9 +20,10 @@ initializeApi(
 // component usage
 const createMapHandler = (map) => { ... }
 const destroyMapHandler = (map) => { ... }
+const mapOptions = { ... }
 
 //...
 
-<GoogleMap onCreate={createMapHandler} onDestroy={destroyMapHandler} />
+<GoogleMap onCreate={createMapHandler} onDestroy={destroyMapHandler} mapOptions={mapOptions} />
 
 ```

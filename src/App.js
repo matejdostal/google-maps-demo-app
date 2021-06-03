@@ -3,11 +3,11 @@ import GoogleMap, { initializeApi } from "./GoogleMap";
 
 initializeApi(
     {
-        // apiKey: "{GOOGLE_MAPS_JS_API_KEY}",
-        // https://googlemaps.github.io/js-api-loader/interfaces/loaderoptions.html
+        // loaderOptions - https://googlemaps.github.io/js-api-loader/interfaces/loaderoptions.html
+        // apiKey: "{GOOGLE_MAPS_JS_API_KEY}"
     },
     {
-        // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
+        // defaultMapOptions - https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
     }
 );
 
@@ -19,23 +19,28 @@ const App = () => {
     const createMapHandler = (map) => {
         // console.log("createMapHandler", map);
         if (screenIndex === 1) {
-            map.setOptions({
-                center: { lat: 48, lng: 17 },
-                zoom: 8,
-                mapTypeId: "hybrid",
-            });
+            // map.setOptions({
+            //     center: { lat: 48, lng: 17 },
+            //     zoom: 8,
+            //     mapTypeId: "hybrid",
+            // });
         }
         if (screenIndex === 3) {
-            map.setOptions({
-                center: { lat: 50, lng: 15 },
-                zoom: 12,
-                mapTypeId: "roadmap",
-            });
+            // map.setOptions({
+            //     center: { lat: 50, lng: 15 },
+            //     zoom: 12,
+            //     mapTypeId: "roadmap",
+            // });
         }
     };
 
     const destroyMapHandler = (map) => {
         // console.log("destroyMapHandler", map);
+    };
+
+    const mapOptions = {
+        center: { lat: 50, lng: 15 },
+        zoom: 12,
     };
 
     const menuButtons = [];
@@ -51,7 +56,12 @@ const App = () => {
             <h3>Screen #{screenIndex}</h3>
             {screenIndex % 2 === 1 && (
                 <div style={{ width: 600, height: 400, border: "1px solid black" }}>
-                    <GoogleMap key={screenIndex} onCreate={createMapHandler} onDestroy={destroyMapHandler} />
+                    <GoogleMap
+                        key={screenIndex}
+                        onCreate={createMapHandler}
+                        onDestroy={destroyMapHandler}
+                        mapOptions={mapOptions}
+                    />
                 </div>
             )}
         </div>

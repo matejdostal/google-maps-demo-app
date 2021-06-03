@@ -39,7 +39,7 @@ export { initializeApi };
 
 // -------------------------------------------------------------------
 
-const GoogleMap = ({ onCreate, onDestroy }) => {
+const GoogleMap = ({ onCreate, onDestroy, mapOptions }) => {
     const [map, setMap] = useState(null);
     const wrapperElRef = useRef(null);
 
@@ -49,6 +49,9 @@ const GoogleMap = ({ onCreate, onDestroy }) => {
         } else {
             if (wrapperElRef.current) {
                 wrapperElRef.current.appendChild(map.getDiv());
+                if (mapOptions) {
+                    map.setOptions(mapOptions);
+                }
                 onCreate(map);
             }
         }
