@@ -9,7 +9,7 @@ import GoogleMap, { initializeApi } from "./GoogleMap";
 initializeApi(
     {
         // loaderOptions - https://googlemaps.github.io/js-api-loader/interfaces/loaderoptions.html
-        // apiKey: "{GOOGLE_MAPS_JS_API_KEY}"
+        apiKey: "{GOOGLE_MAPS_JS_API_KEY}"
     },
     {
         // defaultMapOptions - https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
