@@ -35,6 +35,10 @@ const releaseInstance = (instance) => {
     instances.push(instance);
 };
 
+const destroyInstance = (instance) => {
+    instance = null;
+};
+
 export { initializeApi };
 
 // -------------------------------------------------------------------
