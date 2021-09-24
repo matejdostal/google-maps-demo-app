@@ -57,7 +57,7 @@ const App = () => {
             {screenIndex % 2 === 1 && (
                 <div style={{ width: 600, height: 400, border: "1px solid black" }}>
                     <GoogleMap
-                        key={screenIndex}
+                        id={"map-" + screenIndex}
                         onCreate={createMapHandler}
                         onDestroy={destroyMapHandler}
                         mapOptions={mapOptions}
