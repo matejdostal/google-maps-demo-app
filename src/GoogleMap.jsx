@@ -57,6 +57,7 @@ const GoogleMap = ({ id = null, onCreate, onDestroy, mapOptions }) => {
     const wrapperElRef = useRef(null);
 
     useEffect(() => {
+        console.log("useEffect");
         if (!map) {
             getInstanceAsync(id).then((instance) => setMap(instance));
         } else {
@@ -78,14 +79,14 @@ const GoogleMap = ({ id = null, onCreate, onDestroy, mapOptions }) => {
                 releaseInstance(map);
             }
         };
-    }, [map, wrapperElRef]);
+    }, [map, wrapperElRef, id, onCreate, onDestroy, mapOptions]);
 
     useEffect(() => {
         if (id !== instanceId) {
             setMap(null);
             setInstanceId(id);
         }
-    }, [id]);
+    }, [id, instanceId]);
 
     return <div style={{ width: "100%", height: "100%" }} ref={wrapperElRef}></div>;
 };
